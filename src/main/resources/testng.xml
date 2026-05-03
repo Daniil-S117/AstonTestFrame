@@ -1,0 +1,12 @@
+
+<suite name="MyFirstSuite">
+  <parameter name="a" value="7"/>
+  <parameter name="b" value="5040"/>
+  <parameter name="x" value="11"/>
+  <parameter name="y" value="39916800"/>
+  <test name="testFactorial">
+    <classes>
+      <class name="TestNGFactorial"/>
+    </classes>
+  </test>
+</suite>
