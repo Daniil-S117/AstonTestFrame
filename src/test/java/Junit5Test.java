@@ -1,18 +1,18 @@
 import org.example.Programs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Junit5Test {
 
-
-
     @BeforeEach
-    public void beforeTest() {
-        System.out.println("Тест начат");
+    public void beforeTest(TestInfo testInfo) {
+        System.out.println("Тест начат: "  + testInfo.getDisplayName());
     }
 
     @DisplayName("Вычислить факториал числа")
@@ -36,9 +36,8 @@ public class Junit5Test {
         assertAll(
                 () -> assertEquals(40, Programs.calculate(a, b, '+')),
                 () -> assertEquals(24, Programs.calculate(a, b, '-')),
-                () -> assertEquals(256, Programs.calculate(a, b, '*'))
-
-
+                () -> assertEquals(256, Programs.calculate(a, b, '*')),
+                () -> assertEquals(4, Programs.calculate(a, b, '/'))
         );
     }
 
