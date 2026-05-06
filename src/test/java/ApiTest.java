@@ -4,7 +4,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.apache.http.HttpStatus;
-import org.example.lesson9.EchoDataUser;
+import org.example.lesson8.EchoDataUser;
 import org.junit.jupiter.api.BeforeAll;
 import org.testng.annotations.Test;
 

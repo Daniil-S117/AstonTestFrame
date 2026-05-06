@@ -1,4 +1,4 @@
-package org.example.lesson9;
+package org.example.lesson8;
 
 public class EchoDataUser {
     public String userName;
