@@ -1,0 +1,4 @@
+"Услуги связи", "connection-phone", "connection-sum", "connection-email"
+"Домашний интернет", "internet-phone", "internet-sum", "internet-email"
+"Рассрочка", "score-instalment", "instalment-sum", "instalment-email"
+"Задолженность", "score-arrears", "arrears-sum", "arrears-email"
