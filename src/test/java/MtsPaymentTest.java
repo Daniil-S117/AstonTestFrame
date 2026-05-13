@@ -98,12 +98,12 @@ public class MtsPaymentTest {
         mainPage.switchToPaymentIframe();
         // 5) Проверка корректности отображения суммы
         String sum = mainPage.getIframeSum();
-        logger.info(sum);
         assertTrue(sum.contains("123.00"), "Сумма в чеке неверная: " + sum);
+        logger.info(sum);
         // 6) Проверка суммы на кнопке
         String btnText = mainPage.getIframeButtonText();
-        logger.info(btnText);
         assertTrue(btnText.contains("123.00"), "Сумма на кнопке неверная: " + btnText);
+        logger.info(btnText);
         // 7) Проверка номера
         assertTrue(mainPage.phoneDisplayed().contains("375297777777"), "Номер телефона 375297777777 не отображен");
         logger.info(mainPage.phoneDisplayed());
