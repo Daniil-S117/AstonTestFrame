@@ -3,7 +3,6 @@ import org.example.MtsMainPage;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.util.logging.Logger;
@@ -21,7 +20,7 @@ public class MtsPaymentTest {
         driver.get("https://www.mts.by");
         // Закрываем куки, если они перекрывают элементы
         try {
-            driver.findElement(By.id("cookie-agree")).click();
+            mainPage.clickCookie();
         } catch (Exception ignored) {
         }
     }
@@ -98,12 +97,12 @@ public class MtsPaymentTest {
         mainPage.switchToPaymentIframe();
         // 5) Проверка корректности отображения суммы
         String sum = mainPage.getIframeSum();
-        logger.info(sum);
         assertTrue(sum.contains("123.00"), "Сумма в чеке неверная: " + sum);
+        logger.info(sum);
         // 6) Проверка суммы на кнопке
         String btnText = mainPage.getIframeButtonText();
-        logger.info(btnText);
         assertTrue(btnText.contains("123.00"), "Сумма на кнопке неверная: " + btnText);
+        logger.info(btnText);
         // 7) Проверка номера
         assertTrue(mainPage.phoneDisplayed().contains("375297777777"), "Номер телефона 375297777777 не отображен");
         logger.info(mainPage.phoneDisplayed());
